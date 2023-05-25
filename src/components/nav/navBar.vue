@@ -9,14 +9,20 @@
     <!-- meny for desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
+
+      <v-btn class="ma-2" elevation="0" color="white" :ripple="false">
+        <v-icon color="black" size="35" :to="homeLink" class="mr-10">
+          {{ logoIcon }} </v-icon
+        >{{ logoHeaderTitle }}</v-btn
+      >
+
       <v-btn-toggle v-model="toggle_btn" group>
-        <v-btn :to="homeLink" plain>
-          <v-icon color="black" size="35" :to="homeLink" class="mr-10">
-            {{ logoIcon }}
-          </v-icon>
-          {{ logoHeaderTitle }}
-        </v-btn>
-        <v-btn v-for="link in links" :key="link.title" :to="link.path">
+        <v-btn
+          v-for="link in links"
+          :key="link.title"
+          :to="link.path"
+          :ripple="false"
+        >
           {{ link.title }}
         </v-btn>
       </v-btn-toggle>
@@ -30,7 +36,7 @@
         >{{ logoHeaderTitle }}
       </v-btn>
 
-      <!-- drawer meny for mobil -->
+      <!-- drawer meny mobil -->
       <mobileMenuDrawer ref="openDrawer" />
     </v-container>
     <!-- drawer slutt -->
@@ -44,8 +50,8 @@ export default {
   },
   data: () => ({
     toggle_btn: null,
-    homeLink: "/",
-    logoHeaderTitle: "VUE2 APP",
+    homeLink: "/", // root
+    logoHeaderTitle: "VUE2 APP", // tittel på siden
     logoIcon: "mdi-linux", // icon brukes til logo
     links: [
       {
@@ -68,3 +74,8 @@ export default {
   }),
 };
 </script>
+<!-- <style>
+.v-ripple__container {
+  display: none !important;
+}
+</style> -->
