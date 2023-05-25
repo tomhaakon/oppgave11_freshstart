@@ -1,41 +1,43 @@
 <template>
   <v-app-bar color="white" flat>
-    <!-- drawer knapp for mobil-->
-    <v-app-bar-nav-icon @click="drawer = true" class="d-flex d-sm-none">
-    </v-app-bar-nav-icon>
-    <!-- logo og overskrift for mobil -->
-    <v-btn :to="homeLink" plain left class="d-flex d-sm-none">
-      <v-icon color="black" size="32" left>{{ logoIcon }}</v-icon>
-    </v-btn>
-    <div class="ml-10 d-flex d-sm-none">{{ logoHeaderTitle }}</div>
-
     <!-- meny for desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
-
       <v-btn-toggle v-model="toggle_btn" group>
-        <v-btn :to="homeLink" plain
-          ><v-icon color="black" size="35" :to="homeLink" class="mr-10">
+        <v-btn :to="homeLink" plain>
+          <v-icon color="black" size="35" :to="homeLink" class="mr-10">
             {{ logoIcon }}
           </v-icon>
-          {{ logoHeaderTitle }}</v-btn
-        >
+          {{ logoHeaderTitle }}
+        </v-btn>
         <v-btn v-for="link in links" :key="link.title" :to="link.path">
           {{ link.title }}
         </v-btn>
       </v-btn-toggle>
     </v-container>
 
-    <!-- drawer meny for mobil -->
-    <v-navigation-drawer v-model="drawer" absolute width="100%" height="auto">
-      <v-list nav>
-        <v-list-item-group>
-          <v-list-item v-for="(link, index) in links">
-            <v-list-item-title>{{ link.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
+    <!-- drawer knapp for mobil-->
+    <v-app-bar-nav-icon @click="drawer = true"> </v-app-bar-nav-icon>
+    <v-container class="d-flex d-sm-none">
+      <!-- logo og overskrift for mobil -->
+      <v-btn :to="homeLink" plain left>
+        <v-icon color="black" size="32" left class="mr-10">{{
+          logoIcon
+        }}</v-icon
+        >{{ logoHeaderTitle }}
+      </v-btn>
+
+      <!-- drawer meny for mobil -->
+      <v-navigation-drawer v-model="drawer" absolute width="100%" height="auto">
+        <v-list nav>
+          <v-list-item-group>
+            <v-list-item v-for="(link, index) in links">
+              <v-list-item-title>{{ link.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+    </v-container>
     <!-- drawer slutt -->
   </v-app-bar>
 </template>
