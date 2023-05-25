@@ -15,10 +15,11 @@
         </v-btn>
       </v-btn-toggle>
     </v-container>
-
-    <!-- drawer knapp for mobil-->
-    <v-app-bar-nav-icon @click="drawer = true"> </v-app-bar-nav-icon>
+    <!-- meny for mobil  -->
     <v-container class="d-flex d-sm-none">
+      <!-- drawer knapp for mobil-->
+      <v-app-bar-nav-icon @click="$refs.openDrawer.openDrawerForMobile(links)">
+      </v-app-bar-nav-icon>
       <!-- logo og overskrift for mobil -->
       <v-btn :to="homeLink" plain left>
         <v-icon color="black" size="32" left class="mr-10">{{
@@ -28,23 +29,18 @@
       </v-btn>
 
       <!-- drawer meny for mobil -->
-      <v-navigation-drawer v-model="drawer" absolute width="100%" height="auto">
-        <v-list nav>
-          <v-list-item-group>
-            <v-list-item v-for="(link, index) in links">
-              <v-list-item-title>{{ link.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
+      <mobileMenuDrawer ref="openDrawer" />
     </v-container>
     <!-- drawer slutt -->
   </v-app-bar>
 </template>
 <script>
+import mobileMenuDrawer from "@/components/menuDrawer.vue";
 export default {
+  components: {
+    mobileMenuDrawer,
+  },
   data: () => ({
-    drawer: false,
     toggle_btn: null,
     homeLink: "/",
     logoHeaderTitle: "VUE2 APP",
