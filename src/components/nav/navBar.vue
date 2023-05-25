@@ -1,5 +1,11 @@
 <template>
   <v-app-bar color="white" flat>
+    <!-- drawer knapp for mobil-->
+    <v-app-bar-nav-icon
+      @click="$refs.openDrawer.openDrawerForMobile(links)"
+      class="d-flex d-sm-none"
+    >
+    </v-app-bar-nav-icon>
     <!-- meny for desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
@@ -16,15 +22,11 @@
       </v-btn-toggle>
     </v-container>
     <!-- meny for mobil  -->
+
     <v-container class="d-flex d-sm-none">
-      <!-- drawer knapp for mobil-->
-      <v-app-bar-nav-icon @click="$refs.openDrawer.openDrawerForMobile(links)">
-      </v-app-bar-nav-icon>
       <!-- logo og overskrift for mobil -->
       <v-btn :to="homeLink" plain left>
-        <v-icon color="black" size="32" left class="mr-10">{{
-          logoIcon
-        }}</v-icon
+        <v-icon color="black" size="32" left class="mr-8">{{ logoIcon }}</v-icon
         >{{ logoHeaderTitle }}
       </v-btn>
 
