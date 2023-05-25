@@ -1,16 +1,19 @@
 <template>
   <v-app>
+    <!-- navbar -->
     <topNavBar />
-    <v-main class="grey lighten-1">
+    <v-main class="secondary">
       <v-container>
         <v-row>
           <v-col>
-            <v-sheet min-height="70vh" rounded="lg">
+            <v-sheet min-height="70vh" rounded="md">
               <!-- innhold -->
               <router-view />
             </v-sheet>
           </v-col>
         </v-row>
+        <!-- footer -->
+        <footerBar />
       </v-container>
     </v-main>
   </v-app>
