@@ -14,6 +14,7 @@ export default new Vuetify({
         warning: "#ff9800",
         info: "#00bcd4",
         success: "#8bc34a",
+        link: "#000000",
       },
     },
   },

@@ -1,8 +1,8 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <!-- navbar -->
-    <topNavBar />
     <v-main class="secondary">
+      <topNavBar />
       <v-container>
         <v-row>
           <v-col>
