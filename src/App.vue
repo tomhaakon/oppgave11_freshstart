@@ -1,6 +1,7 @@
 <template>
-  <v-app id="inspire">
-    <v-main class="grey lighten-3">
+  <v-app>
+    <topNavBar />
+    <v-main class="grey lighten-1">
       <v-container>
         <v-row>
           <v-col>
@@ -16,7 +17,12 @@
 </template>
 
 <script>
+import topNavBar from "@/components/nav/navBar.vue";
+import footerBar from "@/components/nav/footerBar.vue";
 export default {
-  data: () => ({}),
+  components: {
+    topNavBar,
+    footerBar,
+  },
 };
 </script>
