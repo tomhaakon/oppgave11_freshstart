@@ -1,1 +1,1 @@
-<template><h1>Resources</h1></template>
+<template><p>heheihei</p></template>

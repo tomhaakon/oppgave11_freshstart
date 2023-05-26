@@ -27,9 +27,7 @@
     <!-- mobil  -->
     <!-- drawer knapp -->
     <v-app-bar-nav-icon
-      @click="
-        $refs.openDrawer.openDrawerForMobile(links, logoIcon, logoHeaderTitle)
-      "
+      @click="$refs.openDrawer.openDrawerForMobile(links)"
       class="d-flex d-sm-none"
     >
     </v-app-bar-nav-icon>
@@ -61,7 +59,7 @@ export default {
     links: [
       {
         title: "Resources",
-        path: "/resources",
+        path: "/resoures",
       },
       {
         title: "Profile",
