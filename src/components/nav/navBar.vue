@@ -3,7 +3,7 @@
     <!-- desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
-      <v-btn plain fab href="/" class="ml-11" :ripple="false">
+      <v-btn href="/" isActive="false" class="ml-11 ma-3" elevation="0">
         <v-icon color="black" size="35">
           {{ logoIcon }}
         </v-icon>
@@ -12,7 +12,7 @@
         </v-app-bar-title>
       </v-btn>
       <!-- linker  -->
-      <v-btn-toggle v-model="toggle_btn" group class="ml-15">
+      <v-btn-toggle v-model="toggle_btn" group class="ml-5">
         <v-btn
           v-for="link in links"
           :key="link.title"
@@ -33,11 +33,13 @@
     </v-app-bar-nav-icon>
     <v-container class="d-flex d-sm-none">
       <!-- logo og overskrift f -->
-      <v-icon color="black" size="32" class="mr-4">{{ logoIcon }}</v-icon>
-      <v-app-bar-title class="ma-2 ml-0">
-        {{ logoHeaderTitle }}
-      </v-app-bar-title>
+      <v-btn elevation="0">
+        <v-icon color="black" size="32" class="mr-4">{{ logoIcon }}</v-icon>
 
+        <v-app-bar-title class="ma-2 ml-0">
+          {{ logoHeaderTitle }}
+        </v-app-bar-title>
+      </v-btn>
       <!-- drawer meny mobil -->
       <mobileMenuDrawer ref="openDrawer" />
     </v-container>
@@ -75,3 +77,8 @@ export default {
   }),
 };
 </script>
+<style>
+#custom-disabled {
+  background-color: transparent;
+}
+</style>
