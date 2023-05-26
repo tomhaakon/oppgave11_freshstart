@@ -1,37 +1,43 @@
 <template>
-  <v-container>
+  <v-container
+    ><v-row>
+      <v-toolbar-title class="ma-2 mb-10 headline"
+        >Expandable table</v-toolbar-title
+      >
+    </v-row>
     <v-data-table
       :headers="dataHeaders"
       :items="dataItems"
       single-expand
       :expanded.sync="expanded"
       item-key="title"
-      show-expand
     >
-      <template slot="item" slot-scope="row">
+      <template v-slot:item="{ item, expand, isExpanded }">
         <tr @click="expand(!isExpanded)">
-          <td></td>
-          <td>{{ row.item.title }}</td>
-          <td>{{ row.item.link }}</td>
-
-          <td>{{ row.item.age }}</td>
-          <td>{{ row.item.description }}</td>
-          <td>
-            <v-btn class="" fab x-small>
-              <v-icon dark>mdi-heart</v-icon>
-            </v-btn>
+          <td
+            class="d-block d-sm-table-cell"
+            v-for="field in Object.keys(item)"
+          >
+            {{ item[field] }}
           </td>
+          <td><v-btn plain rounded>x</v-btn></td>
         </tr>
       </template>
 
-      <template v-slot:top>
-        <v-toolbar flat>
-          <v-toolbar-title>Expandable Table</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-      </template>
       <template v-slot:expanded-item="{ headers, item }">
-        <td :colspan="headers.length">More info about {{ item.name }}</td>
+        <td :colspan="headers.length" class="body-2 pl-5 grey lighten-3 py-3">
+          <span>
+            {{ item.age }}
+          </span>
+          <span class="text-lowercase">
+            år gammel
+            {{ item.description }}
+            ved navn
+          </span>
+          <span>
+            {{ item.title }}
+          </span>
+        </td>
       </template>
     </v-data-table>
   </v-container>
@@ -49,9 +55,9 @@ export default {
           value: "title",
         },
         { text: "Description", value: "description" },
-        { text: "Age", value: "age" },
         { text: "Link", value: "link" },
-        { text: "x", sortable: false },
+        { text: "Age", value: "age" },
+        { text: "", sortable: false }, // plass for å ha knapp for å åpne modal
       ],
       dataItems: [
         {
