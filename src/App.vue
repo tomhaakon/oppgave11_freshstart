@@ -7,7 +7,7 @@
       <v-container>
         <v-row>
           <v-col>
-            <v-sheet min-height="70vh" rounded="md">
+            <v-sheet min-height="70vh" rounded="md" class="pa-3">
               <!-- innhold -->
               <router-view />
             </v-sheet>
