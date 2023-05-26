@@ -1,22 +1,18 @@
 <template>
   <v-app-bar color="white" flat>
-    <!-- drawer knapp for mobil-->
-    <v-app-bar-nav-icon
-      @click="$refs.openDrawer.openDrawerForMobile(links)"
-      class="d-flex d-sm-none"
-    >
-    </v-app-bar-nav-icon>
-    <!-- meny for desktop -->
+    <!-- desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
-
-      <v-btn class="ma-2" elevation="0" color="white" :ripple="false">
-        <v-icon color="black" size="35" :to="homeLink" class="mr-10">
-          {{ logoIcon }} </v-icon
-        >{{ logoHeaderTitle }}</v-btn
-      >
-
-      <v-btn-toggle v-model="toggle_btn" group>
+      <v-btn plain fab href="/" class="ml-11" :ripple="false">
+        <v-icon color="black" size="35">
+          {{ logoIcon }}
+        </v-icon>
+        <v-app-bar-title class="ml-3">
+          {{ logoHeaderTitle }}
+        </v-app-bar-title>
+      </v-btn>
+      <!-- linker  -->
+      <v-btn-toggle v-model="toggle_btn" group class="ml-15">
         <v-btn
           v-for="link in links"
           :key="link.title"
@@ -27,23 +23,28 @@
         </v-btn>
       </v-btn-toggle>
     </v-container>
-    <!-- meny for mobil  -->
 
+    <!-- mobil  -->
+    <!-- drawer knapp -->
+    <v-app-bar-nav-icon
+      @click="$refs.openDrawer.openDrawerForMobile(links)"
+      class="d-flex d-sm-none"
+    >
+    </v-app-bar-nav-icon>
     <v-container class="d-flex d-sm-none">
-      <!-- logo og overskrift for mobil -->
-      <v-btn :to="homeLink" plain left>
-        <v-icon color="black" size="32" left class="mr-8">{{ logoIcon }}</v-icon
-        >{{ logoHeaderTitle }}
-      </v-btn>
+      <!-- logo og overskrift f -->
+      <v-icon color="black" size="32" class="mr-4">{{ logoIcon }}</v-icon>
+      <v-app-bar-title class="ma-2 ml-0">
+        {{ logoHeaderTitle }}
+      </v-app-bar-title>
 
       <!-- drawer meny mobil -->
       <mobileMenuDrawer ref="openDrawer" />
     </v-container>
-    <!-- drawer slutt -->
   </v-app-bar>
 </template>
 <script>
-import mobileMenuDrawer from "@/components/menuDrawer.vue";
+import mobileMenuDrawer from "@/components/nav/menuDrawer.vue";
 export default {
   components: {
     mobileMenuDrawer,
@@ -74,8 +75,3 @@ export default {
   }),
 };
 </script>
-<!-- <style>
-.v-ripple__container {
-  display: none !important;
-}
-</style> -->
