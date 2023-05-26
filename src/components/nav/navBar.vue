@@ -59,7 +59,7 @@ export default {
     links: [
       {
         title: "Resources",
-        path: "/resoures",
+        path: "/resources",
       },
       {
         title: "Profile",
