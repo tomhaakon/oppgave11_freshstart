@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="white" flat>
+  <v-app-bar color="white" flat fluid style="z-index: 3">
     <!-- desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->

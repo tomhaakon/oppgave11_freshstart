@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialogBox" app>
+  <v-dialog v-model="dialogBox" app width="50vh">
     <v-card>
       <v-card-title>{{ itemData.title }}</v-card-title>
       <v-card-text>

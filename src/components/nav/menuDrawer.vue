@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" absolute width="100%" height="auto">
+  <v-navigation-drawer v-model="drawer" width="100%" height="auto" absolute>
     <v-list nav>
       <v-list-item-group>
         <v-list-item v-for="(link, index) in linkData" :to="link.path">
