@@ -20,13 +20,22 @@
           >
             {{ item[field] }}
           </td>
-          <td><v-btn plain rounded>x</v-btn></td>
+          <td>
+            <v-btn
+              rounded
+              plain
+              :ripple="false"
+              @click.stop="$refs.openDialog.itemDialog(item)"
+              ><v-icon>mdi-information-outline</v-icon></v-btn
+            >
+          </td>
         </tr>
       </template>
 
       <template v-slot:expanded-item="{ headers, item }">
         <td :colspan="headers.length" class="body-2 pl-5 grey lighten-3 py-3">
           <span>
+            "
             {{ item.age }}
           </span>
           <span class="text-lowercase">
@@ -36,14 +45,20 @@
           </span>
           <span>
             {{ item.title }}
+            "
           </span>
         </td>
       </template>
     </v-data-table>
+    <dialogBox ref="openDialog" />
   </v-container>
 </template>
 <script>
+import dialogBox from "@/components/tableDialog.vue";
 export default {
+  components: {
+    dialogBox,
+  },
   data() {
     return {
       expanded: [],
