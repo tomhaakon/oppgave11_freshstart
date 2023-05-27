@@ -13,6 +13,7 @@
       :items="dataItems"
       single-expand
       disable-sort
+      :items-per-page="5"
       :expanded.sync="expanded"
       item-key="title"
       style="position: ; z-index: 0"
