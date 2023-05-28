@@ -1,12 +1,12 @@
 <template>
   <v-app id="inspire">
     <!-- navbar -->
-    <v-main class="">
+    <v-main class="secondary">
       <topNavBar />
       <v-container>
         <v-row>
           <v-col>
-            <v-sheet rounded="md">
+            <v-sheet rounded="md" class="pt-5 pl-5">
               <!-- innhold -->
               <router-view />
             </v-sheet>

@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app prominent hide-on-scroll elevation="1">
     <!-- desktop -->
-    <v-container class="d-none d-sm-flex">
+    <v-container class="d-none d-sm-flex <">
       <!-- logo og overskrift for desktop -->
       <div>
         <v-btn
