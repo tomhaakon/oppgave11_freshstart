@@ -1,14 +1,13 @@
 <template>
-  <v-app-bar prominent app hide-on-scroll scroll-treshold="500">
+  <v-app-bar prominent app hide-on-scroll elevation="0">
     <!-- desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
       <div>
         <v-btn
-          href="/"
+          :href="homeLink"
           :ripple="false"
           isActive="false"
-          class=""
           elevation="0"
           id="logo-button"
         >
