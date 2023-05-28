@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar prominent app hide-on-scroll elevation="0">
+  <v-app-bar app prominent hide-on-scroll elevation="1">
     <!-- desktop -->
     <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->

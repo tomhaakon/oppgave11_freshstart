@@ -5,7 +5,7 @@
     </v-row>
     <!-- MOBILE -->
     <v-data-table
-      class="d-md-none"
+      class="d-md-none mt-10"
       :headers="dataHeaders"
       :items="dataItems"
       single-expand
@@ -55,7 +55,7 @@
     </v-data-table>
     <!-- DESKTOP -->
     <v-data-table
-      class="d-none d-md-block"
+      class="d-none d-md-block mt-10"
       :headers="dataHeaders"
       :items="dataItems"
       single-expand
