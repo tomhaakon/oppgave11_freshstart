@@ -43,11 +43,9 @@
     <v-container class="d-flex d-sm-none">
       <!-- logo og overskrift f -->
       <v-btn elevation="0" id="no-background-hover" :ripple="false" href="/">
-        <v-icon color="black" size="32" class="mr-4">{{ logoIcon }}</v-icon>
+        <v-icon color="black" size="32" class="mr-0">{{ logoIcon }}</v-icon>
 
-        <v-app-bar-title class="ma-2 ml-0">
-          {{ logoHeaderTitle }}
-        </v-app-bar-title>
+        <v-subheader> {{ logoHeaderTitle }} </v-subheader>
       </v-btn>
       <!-- drawer meny mobil -->
       <mobileMenuDrawer ref="openDrawer" />
