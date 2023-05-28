@@ -33,8 +33,6 @@ Det som kommer til å bli fokusert på i hovedoppgaven er:
     - Visning på de forskjellige skjermstørrelsene
     - Feedback, kommunikasjon og bruk av ressurser.
 
-
-
 Oppgave 11. Router
 
  - La oss nå lage 2 nye sider i  src/views

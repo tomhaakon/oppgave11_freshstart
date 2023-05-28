@@ -1,9 +1,12 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-toolbar-title class="headline">{{ headerTitle }}</v-toolbar-title>
+  <v-container
+    ><v-row>
+      <v-toolbar-title class="ma-2 mb-10 headline">{{
+        headerTitle
+      }}</v-toolbar-title>
     </v-row>
     <!-- MOBILE -->
+
     <v-data-table
       class="d-md-none"
       :headers="dataHeaders"
@@ -53,7 +56,7 @@
         </td>
       </template>
     </v-data-table>
-    <!-- DESKTOP -->
+    <!-- tabell Desktop -->
     <v-data-table
       class="d-none d-md-block"
       :headers="dataHeaders"
@@ -87,6 +90,7 @@
       <template v-slot:expanded-item="{ headers, item }">
         <td :colspan="headers.length" class="body-2 pl-5 grey lighten-3 py-3">
           <span>
+            '
             {{ item.age }}
           </span>
           <span class="text-lowercase">
@@ -96,7 +100,8 @@
           </span>
           <span>
             {{ item.title }}
-          </span>
+            '</span
+          >
         </td>
       </template>
     </v-data-table>
@@ -123,7 +128,6 @@ export default {
         { text: "Description", value: "description", sortable: false },
 
         { text: "Age", value: "age" },
-        { text: "" },
 
         // plass for å ha knapp for å åpne modal
       ],

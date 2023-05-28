@@ -9,36 +9,5 @@ v-item--active
 v-size--default"
 
 
+SPØRSMÅL
 
-
-<script>
-import tableComp from "@/components/tableComp.vue";
-export default {
-  components: tableComp,
-  data() {
-    return {
-      headers: [
-        { text: "Task", value: "title" },
-        { text: "Info", value: "todo" },
-        { text: "#", value: "number" },
-      ],
-      tasks: [
-        {
-          title: "opg1",
-          todo: "this and that opg1",
-          number: 1,
-        },
-        {
-          title: "opg2",
-          todo: "this and that opg2",
-          number: 1,
-        },
-        {
-          title: "opg3",
-          todo: "this and that opg3",
-          number: 1,
-        },
-      ],
-    };
-  },
-};
