@@ -34,6 +34,9 @@
         <v-btn class="mt-10" @click="$refs.loginRef.openLoginDialog()">
           Login
         </v-btn>
+        <v-btn class="mt-10" @click="$refs.regRef.openRegDialog()">
+          Register
+        </v-btn>
       </v-btn-toggle>
     </v-container>
 
@@ -56,20 +59,20 @@
       <!-- login comp -->
       <loginComp ref="loginRef" />
       <!-- reg comp  -->
-      <!-- <regComp ref="openRegBox" /> -->
+      <regComp ref="regRef" />
     </v-container>
   </v-app-bar>
 </template>
 <script>
 import mobileMenuDrawer from "@/components/nav/menuDrawer.vue";
-// import regComp from "@/components/user/regComp.vue";
+import regComp from "@/components/user/regComp.vue";
 import loginComp from "@/components/user/loginComp.vue";
 
 export default {
   components: {
     mobileMenuDrawer,
     loginComp,
-    // regComp,
+    regComp,
   },
   data: () => ({
     toggle_btn: null,

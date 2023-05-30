@@ -5,6 +5,12 @@
         <v-list-item v-for="(link, index) in linkData" :to="link.path">
           <v-list-item-title>{{ link.title }}</v-list-item-title>
         </v-list-item>
+        <v-list-item class="mt-10" @click="$refs.loginRef.openLoginDialog()">
+          <v-list-item-title>Login</v-list-item-title>
+        </v-list-item>
+        <v-list-item class="mt-10" @click="$refs.regRef.openRegDialog()">
+          <v-list-item-title>Register</v-list-item-title>
+        </v-list-item>
       </v-list-item-group>
     </v-list>
   </v-navigation-drawer>
