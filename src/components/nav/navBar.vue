@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app prominent hide-on-scroll elevation="1">
     <!-- desktop -->
-    <v-container class="d-none d-sm-flex <">
+    <v-container class="d-none d-sm-flex">
       <!-- logo og overskrift for desktop -->
       <div>
         <v-btn
@@ -19,15 +19,20 @@
         </v-btn>
       </div>
       <!-- linker  -->
+      <!-- sjekk om link eller open dialog -->
+
       <v-btn-toggle v-model="toggle_btn" group>
         <v-btn
           v-for="link in links"
-          :key="link.title"
-          :to="link.path"
           :ripple="false"
           class="mt-10"
+          :key="link.title"
+          :to="link.path"
         >
           {{ link.title }}
+        </v-btn>
+        <v-btn class="mt-10" @click="$refs.loginRef.openLoginDialog()">
+          Login
         </v-btn>
       </v-btn-toggle>
     </v-container>
@@ -48,14 +53,23 @@
       </v-btn>
       <!-- drawer meny mobil -->
       <mobileMenuDrawer ref="openDrawer" />
+      <!-- login comp -->
+      <loginComp ref="loginRef" />
+      <!-- reg comp  -->
+      <!-- <regComp ref="openRegBox" /> -->
     </v-container>
   </v-app-bar>
 </template>
 <script>
 import mobileMenuDrawer from "@/components/nav/menuDrawer.vue";
+// import regComp from "@/components/user/regComp.vue";
+import loginComp from "@/components/user/loginComp.vue";
+
 export default {
   components: {
     mobileMenuDrawer,
+    loginComp,
+    // regComp,
   },
   data: () => ({
     toggle_btn: null,
@@ -66,18 +80,12 @@ export default {
       {
         title: "Resources",
         path: "/resources",
+        link: true,
       },
       {
         title: "Profile",
         path: "/profile",
-      },
-      {
-        title: "Login",
-        path: "/login",
-      },
-      {
-        title: "Register",
-        path: "/register",
+        link: true,
       },
     ],
   }),
